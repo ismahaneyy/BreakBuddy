@@ -13,12 +13,14 @@ import Woman from './assets/womanimae.jpeg';
 import man from './assets/manimage.jpeg'
 import Footer from './components/Footer';
 import FAQ from './components/FAQ';
+import Dashboard from './components/Dashboard';
+import Login from './components/Login';
 
 const App = () => {
-  const [expandedCard, setExpandedCard] = useState(null);  // State to track which card is expanded
+  const [expandedCard, setExpandedCard] = useState(null);  
 
   const handleLearnMore = (cardName) => {
-    setExpandedCard(expandedCard === cardName ? null : cardName);  // Toggle expanded state of the card
+    setExpandedCard(expandedCard === cardName ? null : cardName); 
   };
 
   const testimonialsData = [
@@ -45,7 +47,7 @@ const App = () => {
               heading="Master Your Time, Maximize Your Potential"
               subheading="Automate your productivity with smart scheduling and powerful motivation with BreakBuddy."
               buttonText="Get Started"
-              image={TimerImage}  // Ensure this path points to the correct image file
+              image={TimerImage}  
               imageAlt="A man with a timer illustration"
             />
             <h2 className="h2css">Who can use BreakBuddy?</h2>
@@ -56,7 +58,7 @@ const App = () => {
                 additionalText="BreakBuddy helps students create effective study schedules with tailored breaks to maximize learning."
                 isExpanded={expandedCard === "Students"}
                 onLearnMore={() => handleLearnMore("Students")}
-                image={studentimage} // Add your image import
+                image={studentimage} 
               />
               <Card
                 title="Body Builders"
@@ -64,7 +66,7 @@ const App = () => {
                 additionalText="Bodybuilders can use BreakBuddy to stay consistent with workout plans and rest cycles."
                 isExpanded={expandedCard === "Body Builders"}
                 onLearnMore={() => handleLearnMore("Body Builders")}
-                image={bodybuilder} // Add your image import
+                image={bodybuilder} 
               />
               <Card
                 title="Others"
@@ -72,7 +74,7 @@ const App = () => {
                 additionalText="Whether you’re an entrepreneur or a busy parent, BreakBuddy helps streamline your day."
                 isExpanded={expandedCard === "Others"}
                 onLearnMore={() => handleLearnMore("Others")}
-                image={others} // Add your image import
+                image={others} 
               />
             </section>
             <Testimonials testimonials={testimonialsData} />
@@ -80,7 +82,9 @@ const App = () => {
             < Footer/>
           </div>
         } />
-        <Route path="/signup" element={<Signup />} />  {/* Correct route to Signup page */}
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/dashboard" element={<Dashboard />} /> 
+        <Route path="login" element={<Login/>}/>
       </Routes>
     </Router>
   );

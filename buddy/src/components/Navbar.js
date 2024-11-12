@@ -1,9 +1,16 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = () => {
+  const navigate = useNavigate();
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleLoginClick = () => {
+    navigate('/login'); 
   };
 
   return (
@@ -13,7 +20,7 @@ const Navbar = () => {
         <a href="#home">Home</a>
         <a href="#testimonials">Testimonials</a>
         <a href="#faq">FAQs</a>
-        <button className="login-btn">LOGIN</button>
+        <button className="login-btn" onClick={handleLoginClick}>LOGIN</button>
       </div>
     </nav>
   );
