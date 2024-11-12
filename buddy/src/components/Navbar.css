@@ -2,18 +2,29 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #68690bb7; 
+  background-color: #a52a2ae6;
   padding: 20px;
-  color: #FFFFFF; 
+  color: #FFFFFF;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  cursor: pointer;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.navbar:hover {
+  background-color: #a52a2aff; /* Slightly darker background on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adds a shadow effect */
 }
 
 .navbar h1 {
   font-size: 24px;
-  color: #FFFFFF; 
+  color: #FFFFFF;
 }
 
 .menu a {
-  color: #FFFFFF; 
+  color: #FFFFFF;
   text-decoration: none;
   padding: 8px 12px;
   border-radius: 5px;
@@ -21,12 +32,12 @@
 }
 
 .menu a:hover {
-  background-color: #555555; 
+  background-color: #555555;
 }
 
 .login-btn {
   background-color: hsla(16, 100%, 66%, 0.178);
-  color: #FFFFFF; 
+  color: #FFFFFF;
   padding: 8px 12px;
   border: none;
   border-radius: 5px;
@@ -35,34 +46,12 @@
 }
 
 .login-btn:hover {
-  background-color: #FF6347; 
+  background-color: #FF6347;
 }
+
 body {
-  background-color: #F5F5F5; 
-  color: #333333; 
+  padding-top: 80px;
+  background-color: #F5F5F5;
+  color: #333333;
   font-family: Arial, sans-serif;
-}
-
-h1 {
-  color: #8B5E3C; 
-  font-size: 36px;
-}
-
-p {
-  color: #AAAAAA; 
-  font-size: 16px;
-  line-height: 1.6;
-}
-.button {
-  background-color: #FF7F50; 
-  color: #FFFFFF; 
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.button:hover {
-  background-color: #FF6347; 
 }
