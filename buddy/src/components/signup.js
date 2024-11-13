@@ -18,6 +18,8 @@ const Signup = () => {
     setFormData({ ...formData, [name]: value });
   };
 
+
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { name, username, email, password } = formData;
@@ -39,6 +41,9 @@ const Signup = () => {
       setError(err.response ? err.response.data.error : "Something went wrong!");
     }
   };
+
+
+
 
   return (
     <div className="auth-container">
