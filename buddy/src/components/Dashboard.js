@@ -1,11 +1,15 @@
 import React from 'react';
 import './Dashboard.css';
+import StudentNavbar from './StudentNavbar';
+import StudentProfile from './StudentProfile';
 
 function Dashboard() {
   return (
     <div className="dashboard-container">
-      <h1>Welcome to your Dashboard!</h1>
-      <p>Explore the features and start working towards your goals.</p>
+      < StudentNavbar  />
+      <div className="dashboard-content">
+      <StudentProfile />
+      </div>
     </div>
   );
 }
