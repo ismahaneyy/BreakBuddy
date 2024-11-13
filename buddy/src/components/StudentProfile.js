@@ -1,20 +1,27 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 
 const StudentProfile = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    username: '',
-    email: '',
-  });
+  const [student, setStudent] = useState(null); 
+  const userId = 2; 
 
   useEffect(() => {
-    const userData = JSON.parse(localStorage.getItem('userData'));
-    if (userData) {
-      setFormData({ name: userData.name, username: userData.username, email: userData.email });
-    }
-  }, []);
+    
+    fetch(`https://bbbackend.onrender.com/user/${userId}`) 
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setStudent(data); 
+      })
+      .catch((error) => {
+        console.error('Error fetching student details:', error);
+      });
+  }, [userId]);
 
+<<<<<<< HEAD
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -33,43 +40,21 @@ const StudentProfile = () => {
       console.error("Error updating profile:", error);
     }
   };
+=======
+  
+  
+>>>>>>> 775b1027442788a4bd46a7d398e3172d6c4fd8d5
 
   return (
     <div className="profile-container">
       <h2>Profile</h2>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Full Name:
-          <input
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
-        </label>
-        <label>
-          Username:
-          <input
-            type="text"
-            name="username"
-            value={formData.username}
-            onChange={handleChange}
-            required
-          />
-        </label>
-        <label>
-          Email:
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-        </label>
-        <button type="submit">Save Changes</button>
-      </form>
+      <div className="profile-details">
+        {student.image_url && <img src={student.image_url} alt="Profile" className="profile-image" />}
+        <p><strong>Name:</strong> {student.name}</p>
+        <p><strong>Username:</strong> {student.username}</p>
+        <p><strong>Date of Birth:</strong> {student.date_of_birth}</p>
+        <button>Edit details</button>
+      </div>
     </div>
   );
 };
