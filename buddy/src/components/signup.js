@@ -5,10 +5,10 @@ import './Auth.css';
 const Signup = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    fullName: '',
-    password: '',
+    name: '',
+    username: '',
     email: '',
-    role: 'student',
+    password: '',
   });
   const [errorMessage, setErrorMessage] = useState('');
 
@@ -32,11 +32,11 @@ const Signup = () => {
       });
 
       if (response.ok) {
-        console.log("Signup successful");
+        console.log("Registration successful");
         navigate('/dashboard');
       } else {
         const errorData = await response.json();
-        setErrorMessage(errorData.message || 'Signup failed');
+        setErrorMessage(errorData.message || 'Registration failed. Please try again.');
         console.error('Failed to register:', errorData);
       }
     } catch (error) {
@@ -52,17 +52,17 @@ const Signup = () => {
         <form onSubmit={handleSubmit}>
           <input
             type="text"
-            name="fullName"
-            placeholder="Full name"
-            value={formData.fullName}
+            name="name"
+            placeholder="Full Name"
+            value={formData.name}
             onChange={handleChange}
             required
           />
           <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            value={formData.password}
+            type="text"
+            name="username"
+            placeholder="Username"
+            value={formData.username}
             onChange={handleChange}
             required
           />
@@ -74,18 +74,20 @@ const Signup = () => {
             onChange={handleChange}
             required
           />
-          <select name="role" value={formData.role} onChange={handleChange} required>
-            <option value="student">Student</option>
-            <option value="bodybuilder">Body Builder</option>
-            <option value="other">Other</option>
-          </select>
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            value={formData.password}
+            onChange={handleChange}
+            required
+          />
           <button type="submit" className="auth-button">Sign Up</button>
         </form>
         {errorMessage && <p className="error-message">{errorMessage}</p>}
         <p>
           Already have an account? <a href="/login">Login</a>
         </p>
-        <button className="google-button">Sign up with Google</button>
       </div>
     </div>
   );
