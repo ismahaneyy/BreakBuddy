@@ -26,7 +26,6 @@ const StudentProfile = () => {
     try {
       const response = await axios.patch(`https://bbbackend.onrender.com/user/${userId}`, formData);
       if (response.status === 200) {
-        // Save updated details in localStorage
         localStorage.setItem('userData', JSON.stringify(formData));
         console.log("Profile updated successfully");
       }
