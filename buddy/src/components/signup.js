@@ -33,7 +33,7 @@ const Signup = () => {
 
       if (response.ok) {
         console.log("Registration successful");
-        navigate('/dashboard');
+        navigate('/login');
       } else {
         const errorData = await response.json();
         setErrorMessage(errorData.message || 'Registration failed. Please try again.');
@@ -44,6 +44,9 @@ const Signup = () => {
       setErrorMessage('An error occurred. Please try again.');
     }
   };
+
+
+
 
   return (
     <div className="auth-container">
