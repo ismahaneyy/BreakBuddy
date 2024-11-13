@@ -1,0 +1,16 @@
+
+.student_comps{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 81.5rem;
+    height: 100vh; 
+    background-color: blue; 
+    color: #ffffff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+  }
+  
