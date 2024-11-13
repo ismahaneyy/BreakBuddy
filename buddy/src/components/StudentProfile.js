@@ -31,7 +31,7 @@ const StudentProfile = () => {
         {student.image_url && <img src={student.image_url} alt="Profile" className="profile-image" />}
         <p><strong>Name:</strong> {student.name}</p>
         <p><strong>Username:</strong> {student.username}</p>
-        <p><strong>Date of Birth:</strong> {student.date_of_birth}</p>
+        <p><strong>Date of birth:</strong> {student.date_of_birth}</p>
         <button>Edit details</button>
       </div>
     </div>
