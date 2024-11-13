@@ -1,59 +1,55 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import './Auth.css';
 
 const Signup = () => {
-  const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    name: '',
-    username: '',
-    email: '',
-    password: '',
+    name: "",
+    username: "",
+    email: "",
+    password: "",
   });
-  const [errorMessage, setErrorMessage] = useState('');
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+    setFormData({ ...formData, [name]: value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const response = await fetch('https://bbbackend.onrender.com/user/register', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+    const { name, username, email, password } = formData;
 
-      if (response.ok) {
-        console.log("Registration successful");
-        navigate('/dashboard');
-      } else {
-        const errorData = await response.json();
-        setErrorMessage(errorData.message || 'Registration failed. Please try again.');
-        console.error('Failed to register:', errorData);
-      }
-    } catch (error) {
-      console.error('Error:', error);
-      setErrorMessage('An error occurred. Please try again.');
+    if (password.length < 8) {
+      setError("Password must be at least 8 characters long.");
+      return;
+    }
+
+    try {
+      await axios.post("https://bbbackend.onrender.com/user/register", {
+        name,
+        username,
+        email,
+        password,
+      });
+      navigate("/login");
+    } catch (err) {
+      setError(err.response ? err.response.data.error : "Something went wrong!");
     }
   };
 
   return (
     <div className="auth-container">
       <div className="auth-card">
-        <h2>Create Your Account</h2>
+        <h2>Sign Up</h2>
+        {error && <div className="error-message">{error}</div>}
         <form onSubmit={handleSubmit}>
           <input
             type="text"
             name="name"
-            placeholder="Full Name"
+            placeholder="Name"
             value={formData.name}
             onChange={handleChange}
             required
@@ -84,10 +80,6 @@ const Signup = () => {
           />
           <button type="submit" className="auth-button">Sign Up</button>
         </form>
-        {errorMessage && <p className="error-message">{errorMessage}</p>}
-        <p>
-          Already have an account? <a href="/login">Login</a>
-        </p>
       </div>
     </div>
   );

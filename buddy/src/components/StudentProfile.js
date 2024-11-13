@@ -1,73 +1,37 @@
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
-const StudentProfile = ({ userId }) => {
+const StudentProfile = () => {
   const [formData, setFormData] = useState({
     name: '',
     username: '',
     email: '',
-    profilePicture: '',
   });
 
   useEffect(() => {
-    const fetchUserData = async () => {
-      try {
-        const response = await fetch(`https://bbbackend.onrender.com/user`);
-        if (response.ok) {
-          const userData = await response.json();
-          setFormData({
-            name: userData.name,
-            username: userData.username,
-            email: userData.email,
-            profilePicture: userData.profilePicture || '',
-          });
-        } else {
-          console.error("Failed to fetch user data.");
-        }
-      } catch (error) {
-        console.error("Error:", error);
-      }
-    };
-
-    fetchUserData();
-  }, [userId]);
+    const userData = JSON.parse(localStorage.getItem('userData'));
+    if (userData) {
+      setFormData({ name: userData.name, username: userData.username, email: userData.email });
+    }
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
-  const handleFileChange = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setFormData((prev) => ({ ...prev, profilePicture: reader.result }));
-      };
-      reader.readAsDataURL(file);
-    }
+    setFormData({ ...formData, [name]: value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const userId = JSON.parse(localStorage.getItem('userId'));
     try {
-      const response = await fetch(`https://bbbackend.onrender.com/user`, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        console.log("Profile updated successfully.");
-      } else {
-        console.error("Failed to update profile.");
+      const response = await axios.patch(`https://bbbackend.onrender.com/user/${userId}`, formData);
+      if (response.status === 200) {
+        // Save updated details in localStorage
+        localStorage.setItem('userData', JSON.stringify(formData));
+        console.log("Profile updated successfully");
       }
     } catch (error) {
-      console.error("Error:", error);
+      console.error("Error updating profile:", error);
     }
   };
 
@@ -104,13 +68,6 @@ const StudentProfile = ({ userId }) => {
             onChange={handleChange}
             required
           />
-        </label>
-        <label>
-          Profile Picture:
-          <input type="file" onChange={handleFileChange} />
-          {formData.profilePicture && (
-            <img src={formData.profilePicture} alt="Profile" className="profile-preview" />
-          )}
         </label>
         <button type="submit">Save Changes</button>
       </form>
