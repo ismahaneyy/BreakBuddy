@@ -21,7 +21,6 @@ const StudentProfile = () => {
       });
   }, [userId]);
 
-<<<<<<< HEAD
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -40,10 +39,6 @@ const StudentProfile = () => {
       console.error("Error updating profile:", error);
     }
   };
-=======
-  
-  
->>>>>>> 775b1027442788a4bd46a7d398e3172d6c4fd8d5
 
   return (
     <div className="profile-container">
