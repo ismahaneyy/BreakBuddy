@@ -20,6 +20,8 @@ const Signup = () => {
     });
   };
 
+
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -33,7 +35,7 @@ const Signup = () => {
 
       if (response.ok) {
         console.log("Registration successful");
-        navigate('/login');
+        navigate('/dashboard');
       } else {
         const errorData = await response.json();
         setErrorMessage(errorData.message || 'Registration failed. Please try again.');
