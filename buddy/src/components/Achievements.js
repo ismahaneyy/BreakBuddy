@@ -27,7 +27,7 @@ function Achievements() {
 Session Milestones (e.g., First Study Session, 50th Session, 100 Hours of Study)
 Focus Achievements (e.g., Focused for 1 Hour, Deep Focus)
 Weekly/Monthly Study Challenges (e.g., Weekly Goal Crusher, Monthly Master)
-Mastery & Improvement Achievements (e.g., Study Master, Knowledge Growth, Better Every Day</p>
+Mastery & Improvement Achievements (e.g., Study Master, Knowledge Growth, Better Every Day)</p>
                 </div>
             )}
         </div>
