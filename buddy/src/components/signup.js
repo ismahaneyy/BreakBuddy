@@ -9,6 +9,7 @@ const Signup = () => {
     username: "",
     email: "",
     password: "",
+    age: "",  
   });
   const [error, setError] = useState(null);
   const navigate = useNavigate();
@@ -18,14 +19,17 @@ const Signup = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-
-
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { name, username, email, password } = formData;
+    const { name, username, email, password, age } = formData;
 
     if (password.length < 8) {
       setError("Password must be at least 8 characters long.");
+      return;
+    }
+
+    if (!Number.isInteger(+age) || age <= 0) {
+      setError("Please enter a valid age.");
       return;
     }
 
@@ -35,15 +39,13 @@ const Signup = () => {
         username,
         email,
         password,
+        age,  
       });
       navigate("/login");
     } catch (err) {
       setError(err.response ? err.response.data.error : "Something went wrong!");
     }
   };
-
-
-
 
   return (
     <div className="auth-container">
@@ -82,6 +84,15 @@ const Signup = () => {
             value={formData.password}
             onChange={handleChange}
             required
+          />
+          <input
+            type="number"
+            name="age"
+            placeholder="Age"
+            value={formData.age}
+            onChange={handleChange}
+            required
+            min="1"  
           />
           <button type="submit" className="auth-button">Sign Up</button>
         </form>

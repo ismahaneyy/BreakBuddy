@@ -18,7 +18,7 @@ import Login from './components/Login';
 
 const App = () => {
   const [expandedCard, setExpandedCard] = useState(null);  
-
+ 
   const handleLearnMore = (cardName) => {
     setExpandedCard(expandedCard === cardName ? null : cardName); 
   };
@@ -36,6 +36,8 @@ const App = () => {
     { id: 4, question: 'How does BreakBuddy help bodybuilders?', answer: 'BreakBuddy allows bodybuilders to customize their workout routines by setting exercise durations, break periods, and workout days. It also provides reminders for scheduled sessions to maintain consistency.' },
    
   ];
+
+
 
   return (
     <Router>

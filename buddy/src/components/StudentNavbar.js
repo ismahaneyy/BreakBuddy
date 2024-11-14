@@ -14,8 +14,6 @@ const StudentNavbar = () => {
   return (
     <nav className="student-navbar">
       <div className="navbar-content">
-        <span className="username">{user.username}</span>
-        <h2>Sidenav</h2>
       <div className="links">
         <a href="#home">Timer</a>
         <a href="#home">Notes</a>
