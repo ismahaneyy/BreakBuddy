@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './StudentNavbar.css';
+import { Link } from 'react-router-dom';
 
 const StudentNavbar = () => {
   const [user, setUser] = useState({ username: '' });
@@ -15,10 +16,10 @@ const StudentNavbar = () => {
     <nav className="student-navbar">
       <div className="navbar-content">
       <div className="links">
-        <a href="#home">Timer</a>
-        <a href="#home">Notes</a>
-        <a href="#testimonials">Progress</a>
-        <a href="#faq">Profile</a>
+      <Link to="/timer">Timer</Link> 
+          <Link to="/notes">Notes</Link>
+          <Link to="#progress">Progress</Link>
+          <Link to="#profile">Profile</Link>
       </div>
 
       </div>

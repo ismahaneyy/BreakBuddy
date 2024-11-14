@@ -1,0 +1,94 @@
+.flashcard-container {
+    padding: 30px;
+    background-color: #faf3e0;
+    border-radius: 15px;
+    width: 1050px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    font-family: 'Arial', sans-serif;
+}
+
+.add-note-container {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    justify-content: center;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #d1d1d1;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #8b5e34;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.card {
+    background-color: #d77e3e; 
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+button {
+    padding: 8px 12px;
+    font-size: 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-note-container button {
+    background-color: #8b5e34;
+    color: white;
+}
+
+.add-note-container button:hover {
+    background-color: #6f4e37;
+}
+
+.delete-btn,
+.edit-btn {
+    background-color: #e53935;
+    color: white;
+    padding: 6px 12px; 
+    font-size: 12px; 
+    margin-top: 10px;
+    width: 100%; 
+}
+
+.delete-btn:hover,
+.edit-btn:hover {
+    background-color: #c62828;
+}
+
+.delete-btn:focus,
+.edit-btn:focus {
+    outline: none;
+}

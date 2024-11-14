@@ -15,6 +15,8 @@ import Footer from './components/Footer';
 import FAQ from './components/FAQ';
 import Dashboard from './components/Dashboard';
 import Login from './components/Login';
+import Timer from './components/timer';
+import FlashCard from './components/FlashCard';
 
 const App = () => {
   const [expandedCard, setExpandedCard] = useState(null);  
@@ -87,6 +89,8 @@ const App = () => {
         <Route path="/signup" element={<Signup />} />
         <Route path="/dashboard" element={<Dashboard />} /> 
         <Route path="login" element={<Login/>}/>
+        <Route path="/timer" element={<Timer />} />
+        <Route path="/notes" element={<FlashCard/>}/>
       </Routes>
     </Router>
   );

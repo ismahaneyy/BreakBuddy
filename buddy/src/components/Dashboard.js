@@ -23,6 +23,7 @@ import './Dashboard.css';
 import StudentNavbar from './StudentNavbar';
 import StudentComponents from './StudentComponents';
 
+
 function Dashboard() {
   const [cloudinaryRes, setCloudinaryRes] = useState(null);
   const cloudinaryRef = useRef();
@@ -52,6 +53,7 @@ function Dashboard() {
     <div className="dashboard-container">
       <StudentNavbar />
       <StudentComponents image_url={cloudinaryRes} handleUpload={handleUpload} />
+
     </div>
   );
 }

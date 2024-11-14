@@ -49,7 +49,7 @@ function StudentComponents({ handleUpload, image_url }) {
       <div className="top">
         <h2>BreakBuddy</h2>
         <div className='top-right'>
-          <p>{streak.streak_length || 0}</p>
+          <p>{streak.streak_length || 0} 🔥</p>
           <img src={student?.image_url || image_url || 'bbp.png'} alt="Profile" />
           <p>{student?.username || 'Loading...'}</p>
         </div>
