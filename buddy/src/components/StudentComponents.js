@@ -5,10 +5,7 @@ import StudentProfile from './StudentProfile';
 function StudentComponents({ handleUpload, image_url }) {
   const [student, setStudent] = useState(null);
   const [streak, setStreak] = useState(0)
-  const userId = 1;
-
-
-
+  const userId = 1
 
 
   useEffect(() => {
@@ -26,7 +23,6 @@ function StudentComponents({ handleUpload, image_url }) {
         console.error('Error fetching streak:', error);
       });
   }, [userId]);
-
 
 
 
@@ -52,11 +48,13 @@ function StudentComponents({ handleUpload, image_url }) {
     <div className="student_comps">
       <div className="top">
         <h2>BreakBuddy</h2>
-        <p>{streak.streak_length || 0}</p>
-        <img src={student?.image_url || image_url || 'bbp.png'} alt="Profile" className="profile-image" style={{ width: "150px", height: "150px", borderRadius: "50%" }}/>
-        <p>{student?.username || 'Loading...'}</p>
+        <div className='top-right'>
+          <p>{streak.streak_length || 0}</p>
+          <img src={student?.image_url || image_url || 'bbp.png'} alt="Profile" />
+          <p>{student?.username || 'Loading...'}</p>
+        </div>
+       
       </div>
-
       <StudentProfile image_url={image_url} handleUpload={handleUpload} />
     </div>
   );

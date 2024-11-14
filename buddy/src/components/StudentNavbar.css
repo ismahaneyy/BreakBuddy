@@ -1,54 +1,3 @@
-/* .student-navbar {
-    background-color: #333;
-    padding: 10px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: white;
-  }
-  
-  .navbar-content {
-    display: flex;
-    align-items: center;
-  }
-  
-  .profile-picture {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 10px;
-  }
-  
-  .username {
-    font-size: 18px;
-    font-weight: 500;
-  }
-  
-  .student-navbar .navbar-content {
-    display: flex;
-    align-items: center;
-  }
-  
-  .student-navbar .navbar-content img {
-    margin-right: 10px;
-  }
-  
-  .student-navbar .username {
-    font-size: 18px;
-    font-weight: bold;
-  }
-   */
-
-
-
-
-
-
-
-
-
-
 
 .student-navbar {
   position: fixed;
@@ -56,7 +5,7 @@
   left: 0;
   width: 220px;
   height: 100vh; 
-  background-color: brown; 
+  background-color: #BAA284; 
   color: #ffffff;
   padding: 20px;
   display: flex;
@@ -72,34 +21,27 @@
   align-items: flex-start;
 }
 
-.username {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
 
-/* Section title */
-.navbar-content h2 {
-  font-size: 1.5rem;
-  margin-bottom: 30px;
-}
 
-/* Links container */
+
+
 .links {
   display: flex;
   flex-direction: column;
-  gap: 15px; /* Space between links */
+  gap: 50px; 
   width: 100%;
+  margin-top: 150px;
+  padding-left: 25%;
 }
 
-/* Individual link style */
+
 .links a {
-  color: #bbbbbb;
+  color: white;
   text-decoration: none;
-  font-size: 1rem;
-  padding: 8px 0;
+  font-size: 1.2rem;
   width: 100%;
   transition: color 0.3s ease;
+  font-weight: bold;
 }
 
 .links a:hover {

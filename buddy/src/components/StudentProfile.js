@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import './StudentProfile.css';
+import Achievements from './Achievements';
 
 const StudentProfile = ({ handleUpload, image_url }) => {
   const [student, setStudent] = useState(null);
@@ -56,69 +58,64 @@ const StudentProfile = ({ handleUpload, image_url }) => {
 
   return (
     <div className="profile-container">
-      <h2>Profile</h2>
       <div className="profile-details">
         {student && (
           <>
             {isEditing ? (
               <form onSubmit={handleSubmit}>
-                <div>
-                  <label>Name:</label>
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                  />
-                </div>
-                <div>
-                  <label>Username:</label>
-                  <input
-                    type="text"
-                    name="username"
-                    value={formData.username}
-                    onChange={handleChange}
-                  />
-                </div>
-                <div>
-                  <label>Age:</label>
-                  <input
-                    type="number"
-                    name="age"
-                    value={formData.age}
-                    onChange={handleChange}
-                  />
-                </div>
-                
-                <div>
+                <div className='e1'>
                   <img
                     src={image_url || 'bbp.png'}
                     alt="Profile"
                     className="profile-image"
                     style={{ width: "150px", height: "150px", borderRadius: "50%", cursor: "pointer" }}
-                    onClick={handleUpload} // Click to open widget
+                    onClick={handleUpload} 
                   />
                 </div>
-                <button type="submit">Save Changes</button>
+
+                <div className='p2'>
+                  <label>Name:</label>
+                  <input type="text" name="name" value={formData.name} onChange={handleChange}/>
+
+                  <label>Username:</label>
+                  <input type="text" name="username" value={formData.username} onChange={handleChange}/>
+
+                  <label>Age:</label>
+                  <input type="number" name="age" value={formData.age} onChange={handleChange}/>
+
+     
+                </div>
+              
+                <button className='save' type="submit">Save Changes </button>
               </form>
             ) : (
               <>
-                <div>
+                <div className='p1'>
                   <img
                     src={student.image_url || image_url || 'bbp.png'}
                     alt="Profile"
                     className="profile-image"
                     style={{ width: "150px", height: "150px", borderRadius: "50%" }}
                   />
+                   <p>{student.name}</p>
                 </div>
-                <p><strong>Name:</strong> {student.name}</p>
-                <p><strong>Username:</strong> {student.username}</p>
-                <p><strong>Age:</strong> {student.age}</p>
-                <button onClick={() => setIsEditing(true)}>Edit details</button>
+
+                <div className='p2'>
+                   <p><strong>Name:</strong> {student.name}</p>
+                   <p><strong>Username:</strong> {student.username}</p>
+                </div>
+                
+                <p className='age'><strong>Age:</strong> {student.age}</p>
+                <button className='edit' onClick={() => setIsEditing(true)}>Edit details</button>
               </>
             )}
           </>
         )}
+      </div>
+
+
+      <div className='achievements'>
+        <Achievements/>
       </div>
     </div>
   );
