@@ -5,8 +5,8 @@
     right: 0;
     width: 81.5rem;
     height: 100vh; 
-    background-color: blue; 
-    color: #ffffff;
+    background-color: white; 
+    color: black;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -14,3 +14,8 @@
     
   }
   
+
+  .top{
+    display: flex;
+    
+  }
