@@ -17,7 +17,7 @@ const Footer = () => {
           <a href="mailto:ismahanabdirizakk@gmail.com"> ismahanabdirizakk@gmail.com</a> | 
           <a href="mailto:mujahidabdi5070@gmail.com"> mujahidabdi5070@gmail.com</a>
         </p>
-        <p>2024, Mujahid and Ismahan. All Rights Reserved</p>
+        <p className="us">2024, Mujahid and Ismahan. All Rights Reserved</p>
       </div>
     </footer>
   );

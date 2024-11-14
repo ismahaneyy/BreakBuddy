@@ -20,31 +20,6 @@ const StudentProfile = () => {
         console.error('Error fetching student details:', error);
       });
   }, [userId]);
-
-<<<<<<< HEAD
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const userId = JSON.parse(localStorage.getItem('userId'));
-    try {
-      const response = await axios.patch(`https://bbbackend.onrender.com/user/${userId}`, formData);
-      if (response.status === 200) {
-        localStorage.setItem('userData', JSON.stringify(formData));
-        console.log("Profile updated successfully");
-      }
-    } catch (error) {
-      console.error("Error updating profile:", error);
-    }
-  };
-=======
-  
-  
->>>>>>> 775b1027442788a4bd46a7d398e3172d6c4fd8d5
-
   return (
     <div className="profile-container">
       <h2>Profile</h2>

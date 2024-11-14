@@ -8,7 +8,7 @@ function Card(props) {
       <h3>{props.title}</h3>
       <p>{props.description}</p>
 
-      {/* Conditionally render additional text if the card is expanded */}
+     
       {props.isExpanded && (
         <div>
           <p className="additional-text">{props.additionalText}</p>
@@ -36,12 +36,13 @@ function Card(props) {
         </div>
       )}
 
-      {/* Learn More button toggles the expansion */}
+     
       <button onClick={() => props.onLearnMore(props.title)}>
         {props.isExpanded ? "Show Less" : "Learn More"} <span className="arrow">→</span>
       </button>
     </div>
   );
 }
+
 
 export default Card;

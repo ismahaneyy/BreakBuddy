@@ -51,7 +51,7 @@ footer a:hover {
   padding: 20px;
   background-color: #a52a2ae6;
   color: white;
-  cursor: pointer; /* Changes the cursor to indicate clickable area */
+  cursor: pointer;
 }
 
 .footer-left, .footer-right {
@@ -80,9 +80,9 @@ footer a:hover {
   text-decoration: underline;
 }
 
-/* Smooth Scroll Effect */
+
 .footer:hover {
-  background-color: #a52a2a8a; /* Adds a hover effect to indicate it's clickable */
+  background-color: #a52a2a8a; 
 }
 
 .footer-text {
