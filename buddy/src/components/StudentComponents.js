@@ -61,3 +61,15 @@ function StudentComponents({ handleUpload, image_url }) {
 }
 
 export default StudentComponents;
+
+
+
+
+
+
+
+
+
+
+
+

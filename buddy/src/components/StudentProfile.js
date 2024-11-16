@@ -12,8 +12,8 @@ const StudentProfile = ({ handleUpload, image_url }) => {
     age: '',
     image_url: ''
   });
-
-  const userId = 1;
+  
+  const userId = 2
 
   useEffect(() => {
     fetch(`https://bbbackend.onrender.com/users/${userId}`)
@@ -76,14 +76,10 @@ const StudentProfile = ({ handleUpload, image_url }) => {
                 <div className='p2'>
                   <label>Name:</label>
                   <input type="text" name="name" value={formData.name} onChange={handleChange}/>
-
                   <label>Username:</label>
                   <input type="text" name="username" value={formData.username} onChange={handleChange}/>
-
                   <label>Age:</label>
                   <input type="number" name="age" value={formData.age} onChange={handleChange}/>
-
-     
                 </div>
               
                 <button className='save' type="submit">Save Changes </button>
@@ -99,7 +95,7 @@ const StudentProfile = ({ handleUpload, image_url }) => {
                   />
                    <p>{student.name}</p>
                 </div>
-
+                
                 <div className='p2'>
                    <p><strong>Name:</strong> {student.name}</p>
                    <p><strong>Username:</strong> {student.username}</p>

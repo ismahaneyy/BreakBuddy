@@ -1,16 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './StudentNavbar.css';
 import { Link } from 'react-router-dom';
 
 const StudentNavbar = () => {
-  const [user, setUser] = useState({ username: '' });
-
-  useEffect(() => {
-    const userData = JSON.parse(localStorage.getItem('userData'));
-    if (userData) {
-      setUser({ username: userData.username });
-    }
-  }, []);
+ 
 
   return (
     <nav className="student-navbar">
@@ -28,3 +21,4 @@ const StudentNavbar = () => {
 };
 
 export default StudentNavbar;
+
