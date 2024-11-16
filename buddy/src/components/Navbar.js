@@ -5,21 +5,19 @@ import './Navbar.css';
 const Navbar = () => {
   const navigate = useNavigate();
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   const handleLoginClick = () => {
     navigate('/login'); 
   };
 
   return (
-    <nav className="navbar" onClick={scrollToTop}>
+    <nav className="navbar">
       <h1>BreakBuddy</h1>
       <div className="menu">
+       <a> Why BreakBuddy</a>
         <a href="#home">Home</a>
         <a href="#testimonials">Testimonials</a>
-        <a href="#faq">FAQs</a>
+        <a>FAQ</a>
+        <a href="#blog">Blog</a>
         <button className="login-btn" onClick={handleLoginClick}>LOGIN</button>
       </div>
     </nav>

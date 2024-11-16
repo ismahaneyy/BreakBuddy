@@ -1,49 +1,60 @@
-.hero-section {
+.hero {
+  position: relative; /* Necessary to position the overlay pseudo-element */
+  background-size: cover;
+  background-position: center;
+  height: calc(100vh - 60px);
+  padding: 0 20px;
+  color: white;
+  text-align: left;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding: 80px 5%;
-  background-color: #f9f9f9;
-  gap: 40px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-top: 10px;
+  transition: background-image 1s ease-in-out; /* Smooth transition */
+}
+
+/* Overlay with reduced opacity */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit; /* Inherit the background image */
+  opacity: 0.7; /* 70% opacity */
+  z-index: -1; /* Place the overlay behind the content */
 }
 
 .hero-content {
-  max-width: 45%;
+  max-width: 600px;
+  padding-left: 20px;
+  margin-top: 10px;
 }
 
-.hero-content h2 {
-  font-size: 3rem;
-  color: #333;
-  font-weight: 700;
-  line-height: 1.4;
-  margin-bottom: 20px;
-  text-transform: capitalize;
+.hero-content h1 {
+  font-size: 4em;
+  color: #FFFFFF;
+  margin-bottom: 10px;
 }
 
 .hero-content p {
-  font-size: 1.2rem;
-  color: #555;
+  font-size: 1.4em;
+  color: rgba(255, 255, 255, 0.75);
   margin-bottom: 20px;
 }
 
-.hero-content button {
-  padding: 12px 24px;
-  font-size: 1rem;
+.hero-btn {
+  padding: 12px 30px;
+  background: linear-gradient(90deg, #A2845E, #FF0A00, #000000);
   color: white;
-  background-color: #250524;
   border: none;
-  border-radius: 5px;
+  border-radius: 15px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  font-size: 1.2em;
+  transition: background-color 0.3s ease;
 }
 
-.hero-content button:hover {
-  background-color: #0056b3;
-}
-
-.hero-image img {
-  width: 100%;
-  max-width: 400px;
-  border-radius: 10px;
+.hero-btn:hover {
+  background: linear-gradient(90deg, #A2845E, #FF0A00, #000000);
 }
