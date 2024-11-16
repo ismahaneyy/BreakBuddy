@@ -10,8 +10,18 @@ import Login from './components/Login';
 import Timer from './components/timer';
 import FlashCard from './components/FlashCard';
 import Testimonials from './components/Testimonials';
+import JoinCreateRoom from './components/JoinCreateRoom';
+import { io } from "socket.io-client";
+import RoomManager from "./components/RoomManager";
+import ClientRoom from "./components/ClientRoom";
+import Room from "./components/Room";
+// import Card from './Card';
+
+
 
 const App = () => {
+
+  const socket = io("http://localhost:5000"); 
 
   return (
     <Router>
@@ -38,6 +48,15 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/timer" element={<Timer />} />
         <Route path="/notes" element={<FlashCard />} />
+        <Route path="/manager" element={<JoinCreateRoom socket={socket} />} />
+        <Route path="/isma" element={<RoomManager socket={socket} />} />
+        <Route path="/room" element={<Room socket={socket} />} />
+        <Route path="/client" element={<ClientRoom socket={socket} />} />
+        {/* <Route path="/progress" element={<Card/>} /> */}
+
+
+
+
       </Routes>
     </Router>
   );

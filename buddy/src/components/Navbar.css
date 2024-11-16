@@ -8,11 +8,15 @@
   justify-content: space-between;
   align-items: center;
   padding: 15px 30px;
-  background-color: rgba(0, 0, 0, 0.6); 
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
+  /* background-color: rgba(0, 0, 0, 0.6); 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);  */
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+  border: solid white 1px;
   color: white;
   margin-top: 10px;
   margin-left: 10px;
+  border-radius: 10px;
 }
 
 .logo {

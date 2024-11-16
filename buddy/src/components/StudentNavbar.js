@@ -2,8 +2,10 @@ import React from 'react';
 import './StudentNavbar.css';
 import { Link } from 'react-router-dom';
 
+
 const StudentNavbar = () => {
  
+  
 
   return (
     <nav className="student-navbar">
@@ -11,8 +13,10 @@ const StudentNavbar = () => {
       <div className="links">
       <Link to="/timer">Timer</Link> 
           <Link to="/notes">Notes</Link>
-          <Link to="#progress">Progress</Link>
-          <Link to="#profile">Profile</Link>
+          <Link to="/manager">Rooms  </Link>
+          <Link to="/progress">Progress</Link>
+          {/* <Link to="#profile">Profile</Link> */}
+    
       </div>
 
       </div>

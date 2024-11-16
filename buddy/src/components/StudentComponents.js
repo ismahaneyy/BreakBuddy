@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './StudentComponents.css';
 import StudentProfile from './StudentProfile';
 
+
 function StudentComponents({ handleUpload, image_url }) {
   const [student, setStudent] = useState(null);
   const [streak, setStreak] = useState(0)
@@ -55,6 +56,7 @@ function StudentComponents({ handleUpload, image_url }) {
         </div>
        
       </div>
+      
       <StudentProfile image_url={image_url} handleUpload={handleUpload} />
     </div>
   );
