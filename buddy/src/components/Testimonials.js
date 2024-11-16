@@ -1,8 +1,6 @@
 import React from 'react';
 import './Testimonials.css';
-import manImage from '../assets/manimage.jpeg'
-import womanImage from '../assets/womanimae.jpeg'
-
+import womanImage from '../assets/womanimae.jpeg';
 const Testimonials = () => {
   return (
     <div className="testimonials">
@@ -19,7 +17,7 @@ const Testimonials = () => {
           <h4>- Jamie, College Student</h4>
         </div>
         <div className="testimonial">
-          <img src={manImage} alt="User 3" className="testimonial-image" />
+          <img src={womanImage} alt="User 3" className="testimonial-image" />
           <p>"As someone who constantly procrastinates, this has been a game-changer in motivating me to complete my homework."</p>
           <h4>- Nethan, High School Student</h4>
         </div>

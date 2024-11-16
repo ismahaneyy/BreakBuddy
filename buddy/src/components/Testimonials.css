@@ -14,21 +14,21 @@
 .testimonial-slider {
   display: flex;
   gap: 20px;
-  justify-content: space-evenly; /* Evenly space the testimonials */
-  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  justify-content: space-evenly; 
+  flex-wrap: wrap;
 }
 
 .testimonial {
   background-color: transparent;
   padding: 0;
   text-align: center;
-  flex: 1; /* Allows equal width for all items */
-  max-width: 300px; /* Optional: max width to prevent items from getting too large */
+  flex: 1; 
+  max-width: 300px; 
 }
 
 .testimonial-image {
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 88px;
   border-radius: 50%;
   margin-bottom: 15px;
 }
