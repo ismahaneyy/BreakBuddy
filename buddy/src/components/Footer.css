@@ -1,93 +1,45 @@
-footer {
-  background-color: #a52a2ae6;
-  color: white;
-  padding: 30px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  text-align: center;
-  gap: 20px;
-}
-
-footer .footer-left {
-  flex: 1;
-  font-size: 16px;
-  text-align: left;
-}
-
-footer .footer-right {
-  flex: 1;
-  text-align: right;
-  font-size: 14px;
-}
-
-footer a {
-  color: #fff;
-  text-decoration: none;
-  margin-left: 5px;
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
-
-@media (max-width: 768px) {
-  footer {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  footer .footer-left,
-  footer .footer-right {
-    text-align: center;
-  }
-}
-
 .footer {
+  background-color: #b21c1c;
+  color: #fff;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  background-color: #a52a2ae6;
-  color: white;
-  cursor: pointer; /* Changes the cursor to indicate clickable area */
+  padding: 40px 20px;
+  flex-wrap: wrap;
 }
 
-.footer-left, .footer-right {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+.footer-column {
+  flex: 1 1 200px;
+  margin-bottom: 20px;
 }
 
-.footer-left p {
+.footer-column h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column li {
+  margin: 8px 0;
+}
+
+.footer-column li button {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
   font-size: 16px;
-  font-weight: bold;
 }
 
-.footer-right p {
-  font-size: 14px;
-  margin: 5px 0;
-  color: #ffffffce;
-}
-
-.footer-right a {
-  color: #ffffffce;
-  text-decoration: none;
-}
-
-.footer-right a:hover {
+.footer-column li button:hover {
   text-decoration: underline;
 }
 
-/* Smooth Scroll Effect */
-.footer:hover {
-  background-color: #a52a2a8a; /* Adds a hover effect to indicate it's clickable */
-}
-
-.footer-text {
-  font-size: 18px;
-  font-weight: bold;
-  margin: 0;
-  text-transform: uppercase;
+.social-icons i {
+  font-size: 24px;
+  margin-right: 10px;
+  cursor: pointer;
 }
