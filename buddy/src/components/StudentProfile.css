@@ -1,102 +1,44 @@
-.profile-container {
-    display: flex;
-    margin-top: 30px;
-}
-
-.profile-details {
-    width: 40rem;
-    border-right: 2px solid black;
-    padding-right: 140px; /* Adjusted padding for profile details */
-    margin-right: 60px; /* Reduced margin-right to bring content closer to the achievements */
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    margin-left: -14px;
-}
-
-.p1 {
-    display: flex;
-    gap: 40px;
-    margin-bottom: 3rem;
-    justify-content: flex-end;
-    align-items: center;
-    margin-left: -14px;
-    
-}
-
-.p1 p {
-    font-weight: bolder;
-    font-size: 1.8rem;
-    padding-top: 40px;
-    margin-left: -14px;
-}
-
-.p2 {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 1rem;
-    font-size: 1.2rem;
-    width: 100%;
-    margin-left: -14px;
-}
-
-.p2 label, .age, .save {
-    width: 30rem;
-    display: flex;
-    justify-content: flex-end;
-    margin-left: -14px;
-}
-
-.p2 input {
-    width: 100%;
-    padding: 8px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.age {
-    margin-bottom: 3rem;
-    font-size: 1.2rem;
-    text-align: right;
-    margin-left: -14px;
-}
-
-.edit{
-    margin-left: 23rem;
-    padding: 17px;
-    font-size: 1rem;
-    font-weight: bold;
-    background-color: white;
-    color: black;
-    border: 2px solid black;
+/* 
+.student-profiles-container {
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
   }
-  .edit:hover{
-    color: white;
-    background-color: #BAA284;
+  
+  .student-profiles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
   }
-.achievements {
-    width: 60rem;
+  
+  .student-profile {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    width: 300px;
+    text-align: left;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .student-image {
+    width: 100%;
     height: auto;
-    padding-left: -3px; 
-    margin-left: -143px; 
-}
-
-.e1 {
-    margin-bottom: 50px;
-}
-
-.save {
-    color: white;
-    background-color: #BAA284;
-    font-weight: bold;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.save:hover {
-    background-color: #a38a67;
-}
+    border-radius: 50%;
+  }
+  
+  .student-details {
+    margin-top: 10px;
+  }
+  
+  .student-details h2 {
+    margin-bottom: 5px;
+    font-size: 1.5em;
+  }
+  
+  .student-details p {
+    margin: 5px 0;
+    font-size: 1em;
+  }
+   */

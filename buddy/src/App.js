@@ -10,6 +10,7 @@ import Login from './components/Login';
 import Timer from './components/timer';
 import FlashCard from './components/FlashCard';
 import Testimonials from './components/Testimonials';
+import Card from './components/Card';
 
 const App = () => {
 
@@ -38,6 +39,7 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/timer" element={<Timer />} />
         <Route path="/notes" element={<FlashCard />} />
+        <Route path="/progress" element={< Card/>} />
       </Routes>
     </Router>
   );

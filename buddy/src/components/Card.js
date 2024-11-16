@@ -1,48 +1,158 @@
-import React from 'react';
-import './Card.css';
+import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { CircularProgressbar } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
+import Chart from 'react-apexcharts';
+import { UilTimes } from '@iconscout/react-unicons';
+import './card.css';
 
 function Card(props) {
-  return (
-    <div className="card">
-      <img src={props.image} alt={props.title} className="card-image" />
-      <h3>{props.title}</h3>
-      <p>{props.description}</p>
+    const [expanded, setExpanded] = useState(false);
 
-     
-      {props.isExpanded && (
-        <div>
-          <p className="additional-text">{props.additionalText}</p>
-          <p className="learn-more-text">
-            Learn more: BreakBuddy is designed to help {props.title.toLowerCase()} by:
-            {props.title === "Students" && (
-              <ul>
-                <li>Using structured study-break intervals to improve focus.</li>
-                <li>Sending reminders to resume studying after breaks.</li>
-              </ul>
-            )}
-            {props.title === "Body Builders" && (
-              <ul>
-                <li>Tracking workouts with customized exercises and rest intervals.</li>
-                <li>Providing workout reminders to build consistency.</li>
-              </ul>
-            )}
-            {props.title === "Others" && (
-              <ul>
-                <li>Automating work/rest intervals for enhanced productivity.</li>
-                <li>Sending alerts to keep you on schedule without distractions.</li>
-              </ul>
-            )}
-          </p>
-        </div>
-      )}
-
-     
-      <button onClick={() => props.onLearnMore(props.title)}>
-        {props.isExpanded ? "Show Less" : "Learn More"} <span className="arrow">→</span>
-      </button>
-    </div>
-  );
+    return (
+        <motion.div layout>
+            {expanded ? <ExpandedCard param={props} setExpanded={() => setExpanded(false)} /> : <CompactCard param={props} setExpanded={() => setExpanded(true)} />}
+        </motion.div>
+    );
 }
 
+function CompactCard({ param, setExpanded }) {
+    const cardColor = param.color ? param.color : { backGround: 'green', boxShadow: 'none' };
+    const title = param.title || 'Progress';
+    const barValue = param.barValue || 50;
+
+    return (
+        <motion.div className="compact-card"
+            style={{
+                background: cardColor.backGround,
+                boxShadow: cardColor.boxShadow
+            }}
+            onClick={setExpanded}
+            layoutId="expandableCard">
+            <div className="radialBar">
+                <CircularProgressbar
+                    value={barValue}
+                    text={`${barValue}%`}
+                    styles={{
+                        path: {
+                            stroke: '#00B5B8',
+                            strokeLinecap: 'round',
+                            strokeWidth: 10,
+                            filter: 'drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.3))',
+                        },
+                        trail: {
+                            stroke: '#d6d6d6',
+                        },
+                        text: {
+                            fill: '#00B5B8',
+                            fontSize: '24px',
+                        },
+                    }}
+                />
+                <span>{title}</span>
+            </div>
+            <div className="detail">
+                <span>{param.value}</span>
+                <span>Last 7 days</span>
+            </div>
+        </motion.div>
+    );
+}
+
+function ExpandedCard({ param, setExpanded }) {
+    const cardColor = param.color ? param.color : { backGround: 'green', boxShadow: 'none' };
+    const seriesData = param.series && Array.isArray(param.series) ? param.series : [2, 3, 1, 4, 5, 2, 3];
+    const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+    const data = {
+        options: {
+            chart: {
+                type: "line",
+                height: "auto",
+            },
+            dropShadow: {
+                enabled: true,
+                opacity: 0.3,
+                blur: 4,
+                left: 0,
+                top: 5,
+            },
+            fill: {
+                colors: ["#00B5B8"],
+                type: "solid",
+            },
+            dataLabels: {
+                enabled: false,
+            },
+            stroke: {
+                curve: "smooth",
+                width: 4,
+                colors: ["#00B5B8"],
+                dropShadow: {
+                    enabled: true,
+                    blur: 5,
+                    left: 0,
+                    top: 3,
+                    opacity: 0.6
+                }
+            },
+            markers: {
+                size: 4,
+                colors: ["#00B5B8"],
+            },
+            tooltip: {
+                y: {
+                    formatter: (value) => `${value} hours`,
+                },
+            },
+            grid: {
+                show: true,
+            },
+            xaxis: {
+                categories: daysOfWeek,
+                title: {
+                    text: 'Days',  
+                    style: {
+                        color: '#00B5B8',
+                        fontSize: '14px',
+                    },
+                },
+            },
+            yaxis: {
+                title: {
+                    text: 'Hours',  
+                    style: {
+                        color: '#00B5B8',
+                        fontSize: '14px',
+                    },
+                },
+            },
+        },
+        series: [
+            {
+                name: "Progress",
+                data: seriesData,
+            },
+        ],
+    };
+
+    return (
+        <motion.div className="expanded-card"
+            style={{
+                background: cardColor.backGround,
+                boxShadow: cardColor.boxShadow
+            }}
+            layoutId="expandableCard">
+            <div style={{ alignSelf: 'flex-end', cursor: 'pointer', color: 'white' }}>
+                <UilTimes onClick={setExpanded} />
+            </div>
+            <span>My Progress</span>
+            <div className="chart-container">
+                <Chart series={data.series} type="line" options={data.options} />
+            </div>
+            <span>Last 7 days</span>
+        </motion.div>
+    );
+}
 
 export default Card;

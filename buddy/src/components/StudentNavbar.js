@@ -18,7 +18,7 @@ const StudentNavbar = () => {
       <div className="links">
       <Link to="/timer">Timer</Link> 
           <Link to="/notes">Notes</Link>
-          <Link to="#progress">Progress</Link>
+          <Link to="/progress">Progress</Link>
           <Link to="#profile">Profile</Link>
       </div>
 

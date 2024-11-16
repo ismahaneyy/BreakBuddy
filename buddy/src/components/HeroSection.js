@@ -11,7 +11,6 @@ import student4 from '../assets/student4.jpg'
 import student5 from '../assets/student5.jpg'
 
 function Hero() {
-  
   const [backgroundImage, setBackgroundImage] = useState(heroBg); 
   const navigate = useNavigate();
 

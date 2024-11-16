@@ -21,7 +21,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import './Dashboard.css';
 import StudentNavbar from './StudentNavbar';
-import StudentComponents from './StudentComponents';
+// import StudentComponents from './StudentComponents';
 
 
 function Dashboard() {
@@ -52,7 +52,7 @@ function Dashboard() {
   return (
     <div className="dashboard-container">
       <StudentNavbar />
-      <StudentComponents image_url={cloudinaryRes} handleUpload={handleUpload} />
+      {/* <StudentComponents image_url={cloudinaryRes} handleUpload={handleUpload} /> */}
 
     </div>
   );
