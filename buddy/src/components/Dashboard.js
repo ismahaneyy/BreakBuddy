@@ -1,15 +1,11 @@
 import React, { useEffect, useState, useRef } from 'react';
 import './Dashboard.css';
 import StudentNavbar from './StudentNavbar';
-<<<<<<< HEAD
-// import StudentComponents from './StudentComponents';
-=======
 import StudentComponents from './StudentComponents';
 import Timer from './timer';
 import FlashCard from './FlashCard';
 import JoinCreateRoom from './JoinCreateRoom';
 import StudentProfile from './StudentProfile';
->>>>>>> a79365b241571488d77c5c2b3497bc1653c019bb
 
 
 function Dashboard() {

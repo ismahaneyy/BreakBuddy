@@ -1,23 +1,13 @@
 // import React, { useEffect, useState, useRef } from 'react';
 // import './StudentComponents.css';
 // import StudentProfile from './StudentProfile';
-// import StudentNavbar from './StudentNavbar'; // Ensure Navbar is at the top
+// // import StudentNavbar from './StudentNavbar'; // Ensure Navbar is at the top
 
-<<<<<<< HEAD
-// function StudentComponents() {
-//   const [cloudinaryRes, setCloudinaryRes] = useState(null);
-//   const cloudinaryRef = useRef();
-//   const widgetRef = useRef();
+
+// function StudentComponents({ handleUpload, image_url }) {
 //   const [student, setStudent] = useState(null);
-//   const [streak, setStreak] = useState(0);
-//   const userId = 1;
-=======
-
-function StudentComponents({ handleUpload, image_url }) {
-  const [student, setStudent] = useState(null);
-  const [streak, setStreak] = useState(0)
-  const userId = 1
->>>>>>> a79365b241571488d77c5c2b3497bc1653c019bb
+//   const [streak, setStreak] = useState(0)
+//   const userId = 1
 
 //   useEffect(() => {
 //     fetch(`https://bbbackend.onrender.com/user/${userId}/streaks`)
@@ -69,45 +59,40 @@ function StudentComponents({ handleUpload, image_url }) {
 //   );
 // }
 
-<<<<<<< HEAD
-// export default StudentComponents;
-=======
-  useEffect(() => {
-    fetch(`https://bbbackend.onrender.com/users/${userId}`)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setStudent(data);
-      })
-      .catch((error) => {
-        console.error('Error fetching student details:', error);
-      });
-  }, [userId]);
+//   useEffect(() => {
+//     fetch(`https://bbbackend.onrender.com/users/${userId}`)
+//       .then((response) => {
+//         if (!response.ok) {
+//           throw new Error('Network response was not ok');
+//         }
+//         return response.json();
+//       })
+//       .then((data) => {
+//         setStudent(data);
+//       })
+//       .catch((error) => {
+//         console.error('Error fetching student details:', error);
+//       });
+//   }, [userId]);
 
-  return (
-    <div className="student_comps">
-      <div className="top">
-        <h2>BreakBuddy</h2>
-        <div className='top-right'>
-          <p>{streak.streak_length || 0} 🔥</p>
-          <img src={student?.image_url || image_url || 'bbp.png'} alt="Profile" />
-          <p>{student?.username || 'Loading...'}</p>
-        </div>
+//   return (
+//     <div className="student_comps">
+//       <div className="top">
+//         <h2>BreakBuddy</h2>
+//         <div className='top-right'>
+//           <p>{streak.streak_length || 0} 🔥</p>
+//           <img src={student?.image_url || image_url || 'bbp.png'} alt="Profile" />
+//           <p>{student?.username || 'Loading...'}</p>
+//         </div>
        
-      </div>
+//       </div>
       
-      <StudentProfile image_url={image_url} handleUpload={handleUpload} />
-    </div>
-  );
-}
-
-export default StudentComponents;
+//       <StudentProfile image_url={image_url} handleUpload={handleUpload} />
+//     </div>
+//   );
 
 
+// export default StudentComponents;
 
 
 
@@ -118,4 +103,5 @@ export default StudentComponents;
 
 
 
->>>>>>> a79365b241571488d77c5c2b3497bc1653c019bb
+
+

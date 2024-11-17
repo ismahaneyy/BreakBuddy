@@ -10,22 +10,22 @@ import Login from './components/Login';
 import Timer from './components/timer';
 import FlashCard from './components/FlashCard';
 import Testimonials from './components/Testimonials';
-<<<<<<< HEAD
-import Card from './components/Card';
-=======
-import JoinCreateRoom from './components/JoinCreateRoom';
-import { io } from "socket.io-client";
-import RoomManager from "./components/RoomManager";
-import ClientRoom from "./components/ClientRoom";
-import Room from "./components/Room";
+// import JoinCreateRoom from './components/JoinCreateRoom';
+// import { io } from "socket.io-client";
+import StudyTogetherPage from './components/StudyTogetherPage';
+import FeaturesPage from './components/FeaturesPage';
+import StatsCounter from './components/StatsCounter';
+// import AdditionalInfo from './components/AdditionalInfo';
+// import RoomManager from "./components/RoomManager";
+// import ClientRoom from "./components/ClientRoom";
+// import Room from "./components/Room";
 // import Card from './Card';
 
 
->>>>>>> a79365b241571488d77c5c2b3497bc1653c019bb
 
 const App = () => {
 
-  const socket = io("http://localhost:5000"); 
+  // const socket = io("http://localhost:5000"); 
 
   return (
     <Router>
@@ -37,11 +37,18 @@ const App = () => {
             <section id="home">
             </section>
             <section id="blog">
-            </section>
             <Blog />
+            {/* <AdditionalInfo /> */}
+            </section>
+            <StudyTogetherPage/>
+            < StatsCounter/>
+            <FeaturesPage />
+
             <section id="testimonials">
               <Testimonials />
             </section>
+          
+           
             
             <Footer />
             
@@ -52,19 +59,15 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/timer" element={<Timer />} />
         <Route path="/notes" element={<FlashCard />} />
-<<<<<<< HEAD
-        <Route path="/progress" element={< Card/>} />
-=======
-        <Route path="/manager" element={<JoinCreateRoom socket={socket} />} />
+        {/* <Route path="/manager" element={<JoinCreateRoom socket={socket} />} />
         <Route path="/isma" element={<RoomManager socket={socket} />} />
         <Route path="/room" element={<Room socket={socket} />} />
-        <Route path="/client" element={<ClientRoom socket={socket} />} />
+        <Route path="/client" element={<ClientRoom socket={socket} />} /> */}
         {/* <Route path="/progress" element={<Card/>} /> */}
 
 
 
 
->>>>>>> a79365b241571488d77c5c2b3497bc1653c019bb
       </Routes>
     </Router>
   );

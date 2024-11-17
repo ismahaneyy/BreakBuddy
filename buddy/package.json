@@ -22,15 +22,13 @@
     "react-apexcharts": "^1.5.0",
     "react-chartjs-2": "^5.2.0",
     "react-circular-progressbar": "^2.1.0",
+    "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.28.0",
     "react-scripts": "5.0.1",
-<<<<<<< HEAD
-    "styled-components": "^6.1.13",
-=======
     "react-toastify": "^10.0.6",
     "socket.io": "^4.8.1",
->>>>>>> a79365b241571488d77c5c2b3497bc1653c019bb
+    "socket.io-client": "^4.8.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

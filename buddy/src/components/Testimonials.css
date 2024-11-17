@@ -1,46 +1,74 @@
-.testimonials {
-  text-align: center;
-  padding: 40px 20px;
+/* Testimonials Section */
+.testimonials-section {
   background: linear-gradient(90deg, #FFFFFF 0%, #A2845E 100%);
+  padding: 50px 0;
 }
 
-.testimonials h2 {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  font-style: italic;
+.testimonial-carousel {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden; /* Hide non-visible testimonials */
 }
 
-.testimonial-slider {
+.testimonial-container {
   display: flex;
-  gap: 20px;
-  justify-content: space-evenly; 
-  flex-wrap: wrap;
+  transition: transform 0.5s ease-in-out; /* Smooth transition for sliding */
 }
 
-.testimonial {
-  background-color: transparent;
-  padding: 0;
+.testimonial-box {
+  flex: 0 0 100%; /* Each item takes up 100% width */
+  display: block;
   text-align: center;
-  flex: 1; 
-  max-width: 300px; 
+  min-width: 100%; /* Ensure all items are full width */
+  padding: 20px;
+  background: linear-gradient(90deg, #FFFFFF 0%, #A2845E 100%);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.testimonial-image {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  margin-bottom: 15px;
+.testimonial-text {
+  font-style: italic;
+  margin-bottom: 20px;
 }
 
-.testimonial p {
-  font-size: 16px;
-  color: #555;
-  margin-bottom: 10px;
-}
-
-.testimonial h4 {
-  font-size: 14px;
+.testimonial-author {
   font-weight: bold;
-  color: #333;
+  margin-top: 10px;
+}
+
+.testimonial-role {
+  color: #6c757d;
+}
+
+/* Optional: Add a little style for dots/indicators for the loop */
+.testimonial-indicators {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.testimonial-indicators span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 0 5px;
+  background-color: #bbb;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.testimonial-indicators span.active {
+  background-color: #007bff;
+}
+
+/* Responsive Styling */
+@media (max-width: 767px) {
+  .testimonial-container {
+    flex-direction: column;
+  }
+
+  .testimonial-box {
+    margin-bottom: 20px;
+  }
 }

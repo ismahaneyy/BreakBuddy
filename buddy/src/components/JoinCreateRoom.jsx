@@ -211,198 +211,198 @@
 
 
 
-import React, { useState } from 'react';
-import { CopyToClipboard } from 'react-copy-to-clipboard';
-import { toast } from 'react-toastify';
-import { IoIosClose } from "react-icons/io";
-import { v4 as uuidv4 } from 'uuid';  
+// import React, { useState } from 'react';
+// import { CopyToClipboard } from 'react-copy-to-clipboard';
+// import { toast } from 'react-toastify';
+// import { IoIosClose } from "react-icons/io";
+// import { v4 as uuidv4 } from 'uuid';  
 
-const JoinCreateRoom = ({ uuid, setUser, setRoomJoined }) => {
-  const [showCreateForm, setShowCreateForm] = useState(false);
-  const [showJoinForm, setShowJoinForm] = useState(false);
-  const [roomId, setRoomId] = useState(uuidv4());
-  const [name, setName] = useState("");
-  const [joinName, setJoinName] = useState("");
-  const [joinRoomId, setJoinRoomId] = useState("");
+// const JoinCreateRoom = ({ uuid, setUser, setRoomJoined }) => {
+//   const [showCreateForm, setShowCreateForm] = useState(false);
+//   const [showJoinForm, setShowJoinForm] = useState(false);
+//   const [roomId, setRoomId] = useState(uuidv4());
+//   const [name, setName] = useState("");
+//   const [joinName, setJoinName] = useState("");
+//   const [joinRoomId, setJoinRoomId] = useState("");
 
 
-  const handleCreateClick = () => {
-    setShowCreateForm(true);
-    setShowJoinForm(false);
-  };
+//   const handleCreateClick = () => {
+//     setShowCreateForm(true);
+//     setShowJoinForm(false);
+//   };
 
-  const handleJoinClick = () => {
-    setShowJoinForm(true);
-    setShowCreateForm(false);
-  };
+//   const handleJoinClick = () => {
+//     setShowJoinForm(true);
+//     setShowCreateForm(false);
+//   };
 
-  const handleCloseForm = () => {
-    setShowCreateForm(false);
-    setShowJoinForm(false);
-  };
+//   const handleCloseForm = () => {
+//     setShowCreateForm(false);
+//     setShowJoinForm(false);
+//   };
 
-  const handleCreateSubmit = (e) => {
-    e.preventDefault();
-    if (!name) return toast.dark("Please enter your name!");
+//   const handleCreateSubmit = (e) => {
+//     e.preventDefault();
+//     if (!name) return toast.dark("Please enter your name!");
 
-    setUser({
-      roomId,
-      userId: uuidv4(),  
-      userName: name,
-      host: true,
-      presenter: true,
-    });
-    setRoomJoined(true);
-    setShowCreateForm(false);
-  };
+//     setUser({
+//       roomId,
+//       userId: uuidv4(),  
+//       userName: name,
+//       host: true,
+//       presenter: true,
+//     });
+//     setRoomJoined(true);
+//     setShowCreateForm(false);
+//   };
 
-  const handleJoinSubmit = (e) => {
-    e.preventDefault();
-    if (!joinName || !joinRoomId) {
-      return toast.dark("Please enter your name and the room ID!");
-    }
+//   const handleJoinSubmit = (e) => {
+//     e.preventDefault();
+//     if (!joinName || !joinRoomId) {
+//       return toast.dark("Please enter your name and the room ID!");
+//     }
 
-    setUser({
-      roomId: joinRoomId,
-      userId: uuidv4(),
-      userName: joinName,
-      host: false,
-      presenter: false,
-    });
-    setRoomJoined(true);
-    setShowJoinForm(false);
-  };
+//     setUser({
+//       roomId: joinRoomId,
+//       userId: uuidv4(),
+//       userName: joinName,
+//       host: false,
+//       presenter: false,
+//     });
+//     setRoomJoined(true);
+//     setShowJoinForm(false);
+//   };
 
-  return (
-    <div className="flex flex-col h-full w-full">
-      <h1 className="ml-12 mt-2 font-bold text-2xl">mujahid Rooms</h1>
+//   return (
+//     <div className="flex flex-col h-full w-full">
+//       <h1 className="ml-12 mt-2 font-bold text-2xl">mujahid Rooms</h1>
       
-      <div className="h-full flex flex-row">
-        <div className="w-1/2 h-full flex flex-col">
-          <h1 className="ml-12 mt-24 text-4xl font-normal">Discover Collaborative Experience</h1>
-          <h1 className="ml-12 mt-3 text-4xl font-normal">with Mujahid Rooms</h1>
-          <p className="ml-12 text-lg mt-14">
-            Step into Mujahid Rooms, where creativity and collaboration come to life!
-            Whether you're brainstorming with your team, hosting a virtual workshop, or just hanging out with friends, our feature-rich rooms provide the perfect environment.
-          </p>
-          <div className="ml-12 mt-8 flex tracking-wider">
-            <button
-              className="bg-blue-400 text-white p-auto w-44 h-14 rounded-lg"
-              onClick={handleCreateClick}
-            >
-              Create Room
-            </button>
-            <button
-              className="ml-12 bg-blue-100 text-blue-600 p-auto w-44 h-14 rounded-lg"
-              onClick={handleJoinClick}
-            >
-              Join Room
-            </button>
-          </div>
-        </div>
+//       <div className="h-full flex flex-row">
+//         <div className="w-1/2 h-full flex flex-col">
+//           <h1 className="ml-12 mt-24 text-4xl font-normal">Discover Collaborative Experience</h1>
+//           <h1 className="ml-12 mt-3 text-4xl font-normal">with Mujahid Rooms</h1>
+//           <p className="ml-12 text-lg mt-14">
+//             Step into Mujahid Rooms, where creativity and collaboration come to life!
+//             Whether you're brainstorming with your team, hosting a virtual workshop, or just hanging out with friends, our feature-rich rooms provide the perfect environment.
+//           </p>
+//           <div className="ml-12 mt-8 flex tracking-wider">
+//             <button
+//               className="bg-blue-400 text-white p-auto w-44 h-14 rounded-lg"
+//               onClick={handleCreateClick}
+//             >
+//               Create Room
+//             </button>
+//             <button
+//               className="ml-12 bg-blue-100 text-blue-600 p-auto w-44 h-14 rounded-lg"
+//               onClick={handleJoinClick}
+//             >
+//               Join Room
+//             </button>
+//           </div>
+//         </div>
 
-        <div className="w-1/2 h-full">
-          <img src="man.jpg" alt="Collaboration" className="w-full" />
-        </div>
-      </div>
+//         <div className="w-1/2 h-full">
+//           <img src="man.jpg" alt="Collaboration" className="w-full" />
+//         </div>
+//       </div>
 
-      {(showCreateForm || showJoinForm) && (
-        <div className="fixed inset-0 flex items-center justify-center">
-          <div
-            className="absolute inset-0 bg-black bg-opacity-50 backdrop-filter backdrop-blur-sm"
-            onClick={handleCloseForm}
-          ></div>
+//       {(showCreateForm || showJoinForm) && (
+//         <div className="fixed inset-0 flex items-center justify-center">
+//           <div
+//             className="absolute inset-0 bg-black bg-opacity-50 backdrop-filter backdrop-blur-sm"
+//             onClick={handleCloseForm}
+//           ></div>
 
-          {/* Create Room Form */}
-          {showCreateForm && (
-            <div className="relative w-full md:w-1/2 lg:w-1/3 p-8 border border-gray-300 bg-white mx-4 rounded-2xl">
-              <button className="absolute top-2 right-2 text-gray-600" onClick={handleCloseForm}>
-                <IoIosClose size={24} />
-              </button>
-              <h1 className="text-center text-blue-600 mb-8 text-2xl">Create Room</h1>
-              <form onSubmit={handleCreateSubmit}>
-                <div className="mb-4">
-                  <input
-                    type="text"
-                    placeholder="Name"
-                    className="form-control block w-full p-2 border border-gray-300 rounded font-mono"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                  />
-                </div>
-                <div className="mb-4 flex items-center border border-gray-300 rounded p-2">
-                  <input
-                    type="text"
-                    className="flex-grow bg-transparent focus:outline-none"
-                    value={roomId}
-                    readOnly={true}
-                  />
-                  <button
-                    className="ml-2 px-2 py-1 text-sm text-white bg-blue-500 rounded"
-                    type="button"
-                    onClick={() => setRoomId(uuidv4())}
-                  >
-                    Generate
-                  </button>
-                  <CopyToClipboard
-                    text={roomId}
-                    onCopy={() => toast.success("Room Id Copied To Clipboard!")}
-                  >
-                    <button
-                      className="ml-2 px-2 py-1 text-sm text-white bg-gray-500 rounded"
-                      type="button"
-                    >
-                      Copy
-                    </button>
-                  </CopyToClipboard>
-                </div>
-                <div className="mt-8">
-                  <button type="submit" className="w-full py-2 bg-gray-800 text-white rounded">
-                    Create Room
-                  </button>
-                </div>
-              </form>
-            </div>
-          )}
+//           {/* Create Room Form */}
+//           {showCreateForm && (
+//             <div className="relative w-full md:w-1/2 lg:w-1/3 p-8 border border-gray-300 bg-white mx-4 rounded-2xl">
+//               <button className="absolute top-2 right-2 text-gray-600" onClick={handleCloseForm}>
+//                 <IoIosClose size={24} />
+//               </button>
+//               <h1 className="text-center text-blue-600 mb-8 text-2xl">Create Room</h1>
+//               <form onSubmit={handleCreateSubmit}>
+//                 <div className="mb-4">
+//                   <input
+//                     type="text"
+//                     placeholder="Name"
+//                     className="form-control block w-full p-2 border border-gray-300 rounded font-mono"
+//                     value={name}
+//                     onChange={(e) => setName(e.target.value)}
+//                   />
+//                 </div>
+//                 <div className="mb-4 flex items-center border border-gray-300 rounded p-2">
+//                   <input
+//                     type="text"
+//                     className="flex-grow bg-transparent focus:outline-none"
+//                     value={roomId}
+//                     readOnly={true}
+//                   />
+//                   <button
+//                     className="ml-2 px-2 py-1 text-sm text-white bg-blue-500 rounded"
+//                     type="button"
+//                     onClick={() => setRoomId(uuidv4())}
+//                   >
+//                     Generate
+//                   </button>
+//                   <CopyToClipboard
+//                     text={roomId}
+//                     onCopy={() => toast.success("Room Id Copied To Clipboard!")}
+//                   >
+//                     <button
+//                       className="ml-2 px-2 py-1 text-sm text-white bg-gray-500 rounded"
+//                       type="button"
+//                     >
+//                       Copy
+//                     </button>
+//                   </CopyToClipboard>
+//                 </div>
+//                 <div className="mt-8">
+//                   <button type="submit" className="w-full py-2 bg-gray-800 text-white rounded">
+//                     Create Room
+//                   </button>
+//                 </div>
+//               </form>
+//             </div>
+//           )}
 
-          {/* Join Room Form */}
-          {showJoinForm && (
-            <div className="relative w-full md:w-1/2 lg:w-1/3 p-8 border border-gray-300 bg-white mx-4 rounded-2xl">
-              <button className="absolute top-2 right-2 text-gray-600" onClick={handleCloseForm}>
-                <IoIosClose size={24} />
-              </button>
-              <h1 className="text-center text-blue-600 mb-8 text-2xl">Join Room</h1>
-              <form onSubmit={handleJoinSubmit}>
-                <div className="mb-4">
-                  <input
-                    type="text"
-                    placeholder="Name"
-                    className="form-control block w-full p-2 border border-gray-300 rounded"
-                    value={joinName}
-                    onChange={(e) => setJoinName(e.target.value)}
-                  />
-                </div>
-                <div className="mb-4">
-                  <input
-                    type="text"
-                    className="form-control block w-full p-2 border border-gray-300 rounded"
-                    value={joinRoomId}
-                    onChange={(e) => setJoinRoomId(e.target.value)}
-                    placeholder="Room Id"
-                  />
-                </div>
-                <div className="mt-8">
-                  <button type="submit" className="w-full py-2 bg-gray-800 text-white rounded">
-                    Join Room
-                  </button>
-                </div>
-              </form>
-            </div>
-          )}
-        </div>
-      )}
-    </div>
-  );
-};
+//           {/* Join Room Form */}
+//           {showJoinForm && (
+//             <div className="relative w-full md:w-1/2 lg:w-1/3 p-8 border border-gray-300 bg-white mx-4 rounded-2xl">
+//               <button className="absolute top-2 right-2 text-gray-600" onClick={handleCloseForm}>
+//                 <IoIosClose size={24} />
+//               </button>
+//               <h1 className="text-center text-blue-600 mb-8 text-2xl">Join Room</h1>
+//               <form onSubmit={handleJoinSubmit}>
+//                 <div className="mb-4">
+//                   <input
+//                     type="text"
+//                     placeholder="Name"
+//                     className="form-control block w-full p-2 border border-gray-300 rounded"
+//                     value={joinName}
+//                     onChange={(e) => setJoinName(e.target.value)}
+//                   />
+//                 </div>
+//                 <div className="mb-4">
+//                   <input
+//                     type="text"
+//                     className="form-control block w-full p-2 border border-gray-300 rounded"
+//                     value={joinRoomId}
+//                     onChange={(e) => setJoinRoomId(e.target.value)}
+//                     placeholder="Room Id"
+//                   />
+//                 </div>
+//                 <div className="mt-8">
+//                   <button type="submit" className="w-full py-2 bg-gray-800 text-white rounded">
+//                     Join Room
+//                   </button>
+//                 </div>
+//               </form>
+//             </div>
+//           )}
+//         </div>
+//       )}
+//     </div>
+//   );
+// };
 
-export default JoinCreateRoom;
+// export default JoinCreateRoom;

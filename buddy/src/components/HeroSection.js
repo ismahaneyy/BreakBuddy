@@ -40,7 +40,7 @@ function Hero() {
       <div className="hero-content">
         <h1>Master Your Time, Maximize Your Potential</h1>
         <p>Automate your productivity with smart scheduling and powerful motivation with BreakBuddy.</p>
-        <button className="hero-btn" onClick={handleSignupClick}>Get Started</button>
+        <button className="hero-btn" onClick={handleSignupClick}>Start Studying with us</button>
       </div>
     </section>
   );

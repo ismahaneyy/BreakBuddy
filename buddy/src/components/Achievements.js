@@ -1,7 +1,7 @@
 
 
 import React, { useState } from "react";
-import './Achievements.css'; // Optional CSS for centering
+import './Achievements.css'; 
 
 function Achievements() {
     const [showInfo, setShowInfo] = useState(false);

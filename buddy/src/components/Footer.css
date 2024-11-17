@@ -1,6 +1,6 @@
 .footer {
-  background-color: #b21c1c;
-  color: #fff;
+  background: linear-gradient(90deg, #FFFFFF 0%, #A2845E 100%);
+  color: #221c1c;
   display: flex;
   justify-content: space-between;
   padding: 40px 20px;
