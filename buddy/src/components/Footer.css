@@ -1,0 +1,93 @@
+footer {
+  background-color: #a52a2ae6;
+  color: white;
+  padding: 30px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+  gap: 20px;
+}
+
+footer .footer-left {
+  flex: 1;
+  font-size: 16px;
+  text-align: left;
+}
+
+footer .footer-right {
+  flex: 1;
+  text-align: right;
+  font-size: 14px;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 5px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  footer .footer-left,
+  footer .footer-right {
+    text-align: center;
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #a52a2ae6;
+  color: white;
+  cursor: pointer; /* Changes the cursor to indicate clickable area */
+}
+
+.footer-left, .footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-left p {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.footer-right p {
+  font-size: 14px;
+  margin: 5px 0;
+  color: #ffffffce;
+}
+
+.footer-right a {
+  color: #ffffffce;
+  text-decoration: none;
+}
+
+.footer-right a:hover {
+  text-decoration: underline;
+}
+
+/* Smooth Scroll Effect */
+.footer:hover {
+  background-color: #a52a2a8a; /* Adds a hover effect to indicate it's clickable */
+}
+
+.footer-text {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+  text-transform: uppercase;
+}

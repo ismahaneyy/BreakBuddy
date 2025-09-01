@@ -1,0 +1,57 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #a52a2ae6;
+  padding: 20px;
+  color: #FFFFFF;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  cursor: pointer;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.navbar:hover {
+  background-color: #a52a2aff; /* Slightly darker background on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adds a shadow effect */
+}
+
+.navbar h1 {
+  font-size: 24px;
+  color: #FFFFFF;
+}
+
+.menu a {
+  color: #FFFFFF;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.menu a:hover {
+  background-color: #555555;
+}
+
+.login-btn {
+  background-color: hsla(16, 100%, 66%, 0.178);
+  color: #FFFFFF;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.login-btn:hover {
+  background-color: #FF6347;
+}
+
+body {
+  padding-top: 80px;
+  background-color: #F5F5F5;
+  color: #333333;
+  font-family: Arial, sans-serif;
+}
